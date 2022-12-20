@@ -15,7 +15,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#000, #1b39b1, #000);
+    background: linear-gradient(#131313, #1b39b1, #131313);
     animation: animate 5s linear infinite;
 }
 @keyframes animate {
