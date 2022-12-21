@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from "./Content.module.css"
 
 // icons 
@@ -10,6 +10,86 @@ import {SiTypescript, SiMongodb, SiMysql, SiFirebase, SiJasmine} from "react-ico
 import Project from '../../components/Projetc'
 
 export default function Content() {
+
+    const [textSkill, setTextSkill] = useState("Sempre aprendo novas tecnologias para melhorar ainda mais como dev.")
+    const [skillName, setSkillName] = useState("Habilidades")
+    const [expirence, setExprirence] = useState("")
+    const [clicked, setClicked] = useState(false)
+
+    const handleSkills = (skill) => {
+        setClicked(true)
+        switch(skill){
+            case "html":
+                setSkillName("HTML")
+                setExprirence("2 ano de experiência")
+                setTextSkill("Consiste em uma linguagem de marcação utilizada para produção de páginas na web, que permite a criação de documentos que podem ser lidos em praticamente qualquer tipo de computador e transmitidos pela internet.")
+            break
+            case "css":
+                setSkillName("CSS")
+                setExprirence("2 ano de experiência")
+                setTextSkill("Cascading Style Sheets (abreviado CSS) é um mecanismo para adicionar estilos (cores, fontes, espaçamento, etc.) a uma página web.")
+            break
+            case "js":
+                setSkillName("Javascript")
+                setExprirence("2 ano de experiência")
+                setTextSkill("Javascript é uma linguagem de programação de alta complexidade, mas de fácil uso, voltada para criar elementos em aplicações web, como sites, aplicativos e sistemas online.")
+            break
+            case "bootstrap":
+                setSkillName("Bootstrap")
+                setExprirence("1 ano de experiência")
+                setTextSkill("Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web, usando HTML, CSS e JavaScript.")
+            break
+            case "reactjs":
+                setSkillName("React JS")
+                setExprirence("1 ano de experiência")
+                setTextSkill("O React é a biblioteca mais popular do JavaScript e é usada para construir uma interface de usuário (IU). Ela oferece uma resposta excelente para o usuário adicionar comandos usando um novo método de renderizar sites.")
+            break
+            case "reactnative":
+                setSkillName("React Native")
+                setExprirence("1 ano de experiência")
+                setTextSkill("Baseado no React, framework JS para desenvolvimento web, o React Native possibilita a criação de aplicações móvel multiplataforma (Android e iOS) utilizando apenas Javascript.")
+            break
+            case "ts":
+                setSkillName("Typescript")
+                setExprirence("1 ano de experiência")
+                setTextSkill("Mais conhecido como um superset do Javascript, ou seja, um conjunto de ferramentas, o TypeScript foi criado com o objetivo de incluir recursos que não estão presentes no JS")
+            break
+            case "node":
+                setSkillName("Node JS")
+                setExprirence("1 ano de experiência")
+                setTextSkill("O Node.js pode ser definido como um ambiente de execução Javascript server-side.")
+            break
+            case "mongo":
+                setSkillName("MongoDB")
+                setExprirence("1 ano de experiência")
+                setTextSkill("MongoDB é um banco de dados de documentos com a escalabilidade e flexibilidade que você deseja junto com a consulta e indexação.")
+            break
+            case "mysql":
+                setSkillName("MySQL")
+                setExprirence("1 ano de experiência")
+                setTextSkill("O MySQL é um sistema gerenciador de banco de dados relacional de código aberto usado na maioria das aplicações gratuitas para gerir suas bases de dados.")
+            break
+            case "firebase":
+                setSkillName("Firebase")
+                setExprirence("5 meses de experiência")
+                setTextSkill("O Firebase de Google é uma plataforma digital utilizada para facilitar o desenvolvimento de aplicativos web ou móveis, de uma forma efetiva, rápida e simples.")
+            break
+            case "jasmine":
+                setSkillName("Jasmine")
+                setExprirence("Estudando")
+                setTextSkill("Tendo a sua primeira release publicada em agosto de 2009 no GitHub, o Jasmine é uma biblioteca de testes JavaScript, de código aberto que tem como principal objetivo a execução em qualquer plataforma habilitada ao JavaScript.")
+            break
+            case "go":
+                setSkillName("GOlang")
+                setExprirence("Estudando")
+                setTextSkill("A GoLang — ou, simplesmente, Go — é uma linguagem de programação de código aberto do Google.")
+            break
+            default:
+                setSkillName("I don't know")
+                setTextSkill("Mano, como você chegou aqui! kkkk")
+        }
+    }
+
   return (
     <div className={styles.container}>
         <section className={styles.section1}>
@@ -39,7 +119,9 @@ export default function Content() {
             </div>
 
         </section>
+
         <div className={styles.line}></div>
+
         <section className={styles.section2}>
             <h1>Projetos</h1>
             <div className={styles.projects}>
@@ -53,23 +135,31 @@ export default function Content() {
                 </div>
             </div>
         </section>
+
         <div className={styles.line}></div>
+
         <section className={styles.section3}>
             <h1>Conhecimentos</h1>
             <div className={styles.skills}>
-                <span><AiFillHtml5/></span>
-                <span><DiCss3/></span>
-                <span><IoLogoJavascript/></span>
-                <span><DiBootstrap/></span>
-                <span><DiReact/></span>
-                <span><DiReact/></span>
-                <span><SiTypescript/></span>
-                <span><DiNodejsSmall/></span>
-                <span><SiMongodb/></span>
-                <span><SiMysql/></span>
-                <span><SiFirebase/></span>
-                <span><SiJasmine/></span>
-                <img src="../../../src/assets/golang.svg" alt="go" />
+                <span onClick={() => handleSkills("html")}><AiFillHtml5/></span>
+                <span onClick={() => handleSkills("css")}><DiCss3/></span>
+                <span onClick={() => handleSkills("js")}><IoLogoJavascript/></span>
+                <span onClick={() => handleSkills("bootstrap")}><DiBootstrap/></span>
+                <span onClick={() => handleSkills("reactjs")}><DiReact/></span>
+                <span onClick={() => handleSkills("reactnative")}><DiReact/></span>
+                <span onClick={() => handleSkills("ts")}><SiTypescript/></span>
+                <span onClick={() => handleSkills("node")}><DiNodejsSmall/></span>
+                <span onClick={() => handleSkills("mongo")}><SiMongodb/></span>
+                <span onClick={() => handleSkills("mysql")}><SiMysql/></span>
+                <span onClick={() => handleSkills("firebase")}><SiFirebase/></span>
+                <span onClick={() => handleSkills("jasmine")}><SiJasmine/></span>
+                <img onClick={() => handleSkills("go")} src="../../../src/assets/golang.svg" alt="go" />
+            </div>
+            <div className={styles.info}>
+                <h3 className={styles.skillsTitle}>{skillName}</h3>
+                <p>{textSkill}</p>
+                <p className={styles.expirenceSkills}>{expirence}</p>
+                {!clicked ? <span>*Clique em uma das tecnologias para ver mais sobre.</span> : ""}
             </div>
         </section>
     </div>
