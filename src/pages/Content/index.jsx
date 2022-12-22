@@ -126,15 +126,15 @@ export default function Content() {
 
             <div className={styles.social}>
 
-                <a href="#" className={styles.iconsLink}>
+                <a href="https://github.com/miqueiasbelfort" className={styles.iconsLink}>
                     <span><AiFillGithub/></span>
                     <span>GitHub</span>
                 </a>
-                <a href="#" className={styles.iconsLink}>
+                <a href="https://www.linkedin.com/in/miqueias-belfort/" className={styles.iconsLink}>
                     <span><AiFillLinkedin/></span>
                     <span>LinkedIn</span>
                 </a>
-                <a href="#" className={styles.iconsLink}>
+                <a href='../../src/assets/curriculo.pdf' download="curriculo.pdf" className={styles.iconsLink}>
                     <span><AiOutlineCloudDownload/></span>
                     <span>Curriculo</span>
                 </a>
