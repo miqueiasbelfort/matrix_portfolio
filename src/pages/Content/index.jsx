@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import styles from "./Content.module.css"
+import ScrollReveal from 'scrollreveal'
 
 // icons 
-import {AiFillGithub, AiFillLinkedin, AiOutlineCloudDownload, AiFillHtml5} from "react-icons/ai"
+import {AiFillGithub, AiFillLinkedin, AiOutlineCloudDownload, AiFillHtml5, AiOutlineMail, AiOutlineWhatsApp, AiFillInstagram, AiFillYoutube} from "react-icons/ai"
 import {DiCss3, DiBootstrap, DiReact, DiNodejsSmall} from "react-icons/di"
 import {IoLogoJavascript} from "react-icons/io5"
 import {SiTypescript, SiMongodb, SiMysql, SiFirebase, SiJasmine} from "react-icons/si"
@@ -15,6 +16,10 @@ export default function Content() {
     const [skillName, setSkillName] = useState("Habilidades")
     const [expirence, setExprirence] = useState("")
     const [clicked, setClicked] = useState(false)
+
+    const sectionOne = useRef()
+    const sectionTwo = useRef()
+    const sectionThree = useRef()
 
     const handleSkills = (skill) => {
         setClicked(true)
@@ -90,9 +95,27 @@ export default function Content() {
         }
     }
 
+    useEffect(() => {
+        ScrollReveal().reveal(sectionOne.current, {
+            reset: true,
+            duration: 1000,
+            delay: 200,
+        })
+        ScrollReveal().reveal(sectionTwo.current, {
+            reset: true,
+            duration: 1000,
+            delay: 200
+        })
+        ScrollReveal().reveal(sectionThree.current, {
+            reset: true,
+            duration: 1000,
+            delay: 200
+        })
+    }, [])
+
   return (
     <div className={styles.container}>
-        <section className={styles.section1}>
+        <section className={styles.section1} ref={sectionOne}>
             <h1>Sobre Mim</h1>
             <p className={styles.about}>
                 Comecei a programar com Python no começo de 2021, e foi amor a primeira vista, com o tempo aprendi javascript e estou buscando minha primeira oportunidade profissional na carreira de desenvolvedor. <br/><br/>
@@ -122,7 +145,7 @@ export default function Content() {
 
         <div className={styles.line}></div>
 
-        <section className={styles.section2}>
+        <section className={styles.section2} ref={sectionTwo}>
             <h1>Projetos</h1>
             <div className={styles.projects}>
                 <div className={styles.gridContent}>
@@ -138,7 +161,7 @@ export default function Content() {
 
         <div className={styles.line}></div>
 
-        <section className={styles.section3}>
+        <section className={styles.section3} ref={sectionThree}>
             <h1>Conhecimentos</h1>
             <div className={styles.skills}>
                 <span onClick={() => handleSkills("html")}><AiFillHtml5/></span>
@@ -161,6 +184,31 @@ export default function Content() {
                 <p className={styles.expirenceSkills}>{expirence}</p>
                 {!clicked ? <span>*Clique em uma das tecnologias para ver mais sobre.</span> : ""}
             </div>
+        </section>
+
+        <div className={styles.line}></div>
+
+        <section className={styles.section4}>
+            <a>
+                <AiOutlineMail/>
+                <span>miqueiasbelfort8323@gmail.com</span>
+            </a>
+            <a href='https://github.com/miqueiasbelfort'>
+                <AiFillGithub/>
+                <span>miqueiasbelfort</span>
+            </a>
+            <a href='https://api.whatsapp.com/send?phone=5561992254791&text=Hello%20Miqueias%2C%20how%20are%20you%20today%3F'>
+                <AiOutlineWhatsApp/>
+                <span>(61) 9 9225-4791</span>
+            </a>
+            <a href='https://www.instagram.com/miqueiasbelfort/'>
+                <AiFillInstagram/>
+                <span>@miqueiasbelfort</span>
+            </a>
+            <a href='https://www.youtube.com/channel/UCN2fInEXoFrvJ_yrhqq9Maw'>
+                <AiFillYoutube/>
+                <span>Mik Belfort</span>
+            </a>
         </section>
     </div>
   )
