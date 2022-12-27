@@ -113,6 +113,8 @@ export default function Content() {
         })
     }, [])
 
+    const p1 = {web: "https://gilded-cendol-41dfe7.netlify.app/", github: "https://github.com/miqueiasbelfort/ui-Netflix-Clone", company: ""}
+
   return (
     <div className={styles.container}>
         <section className={styles.section1} ref={sectionOne}>
@@ -149,12 +151,32 @@ export default function Content() {
             <h1>Projetos</h1>
             <div className={styles.projects}>
                 <div className={styles.gridContent}>
-                    <Project/>
-                    <Project/>
-                    <Project/>
-                    <Project/>
-                    <Project/>
-                    <Project/>
+                    <Project
+                        title={"Netflix UI Clone"}
+                        desc={
+                            "Um clone da interface da Netflix com React JS, consumindo a API do site The Movie Database (TMDB)."
+                        }
+                        web={"https://gilded-cendol-41dfe7.netlify.app/"}
+                        github={"https://github.com/miqueiasbelfort/ui-Netflix-Clone"}
+                        company={""}
+                        tecnologis={["React JS", "CSS"]}
+                    />
+                    <Project
+                        title={"Nativa"}
+                        desc={
+                            "Um site onde você pode aprender linguas nativas brasileiras como no duolingo"
+                        }
+                        github={"https://github.com/miqueiasbelfort/Nativa"}
+                        tecnologis={["React JS", "Styled-Components"]}
+                    />
+                    <Project
+                        title={"Firabase Finance"}
+                        desc={
+                            "Um aplicativo onde você pode se cadastrar, fazer login e anotar todos seus gastos do mês."
+                        }
+                        github={"https://github.com/miqueiasbelfort/Finance_firebase"}
+                        tecnologis={["React Native", "Firebase", "Styled-Componets"]}
+                    />
                 </div>
             </div>
         </section>

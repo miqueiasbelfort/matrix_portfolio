@@ -1,9 +1,13 @@
 .container {
     width: 300px;
+    height: 300px;
     padding: 10px;
     background-color: #000;
     border-radius: 10px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .container h3 {
     font-family: 'Press Start 2P', cursive;
@@ -17,12 +21,10 @@
 }
 
 .linkContainer{
-    max-width: 30%;
     display: flex;
     gap: 5px;
-    flex-direction: column;
     align-items: left;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 10px;
     text-align: center;
 }
